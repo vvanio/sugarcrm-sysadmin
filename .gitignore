@@ -1,1 +1,9 @@
-account*
+account*.sh
+modules*.list
+*last-*-call
+cookiejar
+insert-acl.py
+adjustDashlets.py
+translate.py
+findUserPreference.py
+install-with-brx-custom-includes.sh
