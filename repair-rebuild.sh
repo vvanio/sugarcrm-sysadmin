@@ -62,12 +62,12 @@ if [ -n "$R" ]; then return 1; else return 0; fi
 # /main.rst include
 handle_alter_query()
 {
-	SQL=$(cat $SUGARHOST.last-rr-call | grep -o '^ALTER.*');
+	SQL=$(cat $SUGARHOST.last-rr-call | grep -o '^\(ALTER\|CREATE\).*');
 	if [ -n "$SQL" ]
 	then
 	  echo
 	  echo "Vardefs have changed:"
-	  grep -o '^ALTER.*' $SUGARHOST.last-rr-call
+	  grep -o '^\(CREATE\|ALTER\).*' $SUGARHOST.last-rr-call
 	  read -p "Execute SQL? [yN] " EXECSQL
 	  if [ "$EXECSQL" == 'y' ];
 	  then
