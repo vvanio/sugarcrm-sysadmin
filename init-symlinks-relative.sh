@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-do_symlink() # source destination host(s)
+do_symlink() # $source
 {
 	# If symlink doesn't exist
 	if test ! -L "$1"
