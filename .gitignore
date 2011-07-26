@@ -2,6 +2,7 @@ account*.sh
 modules*.list
 *last-*-call
 cookiejar
+# Have personal data:
 insert-acl.py
 adjustDashlets.py
 translate.py

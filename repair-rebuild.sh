@@ -19,12 +19,13 @@ source "account.$SUGARHOST.sh"
 
 if test -z "$user" -o -z "$password"
 then
-	echo "Account file has no admin/password variables."
+	echo "Account file has no user/password variables."
 	exit -4
 fi
+# Set lang= or sugar_version= in account.*.sh too!
 
 if test -z "$lang"
-then
+then 
 	#lang=en_us
 	lang=nl_nl
 	echo "Setting language to $lang"

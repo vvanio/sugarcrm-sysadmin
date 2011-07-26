@@ -19,6 +19,6 @@ Other short bash scripts:
   - `clean-cache <clean-cache>`__, remove cached vardefs, views etc. before running a repair/rebuild.
   - `grep-tree <clean-cache>`__, search a SugarCRM filetree for a string or pattern.
   - `permissions <permissions.sh>`__, find and correct all files with deviating user/group permissions. E.g. for new files, after new checkout.
-  - `svn-ignore-ext.sh <svn-ignore-ext.sh>`__, find all Sugar generated ``*.ext.php`` files, and keep these out of ``svn``. Note that not all these files in the tree will be regenerated, only use in ``custom/modules/``.
+  - `svn-ignore-ext.sh <svn-ignore-ext.sh>`__, find all Sugar generated ``*.ext.php`` files, and keep these out of ``svn``. Note that not all these files in the tree will be regenerated, only use in ``custom/modules/`` (could be a bug in Sugar).
 
   
