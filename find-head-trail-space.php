@@ -1,3 +1,4 @@
+#!/usr/bin/env php
 <?php 
 
 foreach (new RecursiveIteratorIterator (new RecursiveDirectoryIterator ('.')) as $x)
@@ -7,24 +8,18 @@ foreach (new RecursiveIteratorIterator (new RecursiveDirectoryIterator ('.')) as
 		continue;
 	}
 	$data = file_get_contents($file);
-
-	$count1 = 0;
-	$count2 = 0;
-
+	#$matches = array();
+	#$m = preg_match( "/\\A\\v+<\\?/m", $data, $matches);
+	#if ($m) {
+	#	echo("$file\n");
+	#	print_r($matches);
+	#}
 	$matches = array();
-	$m = preg_match( "/^\\v+<\?/", $data, $matches);
+	#$m = preg_match( "/\\?".">\\v\\v+\\Z/m", $data, $matches);
+	$m = preg_match( "/\\?>\\v\\v+\\z/", $data, $matches);
 	if ($m) {
-		$count1 = substr_count($matches[0], "\n");
-	}
-
-	$matches = array();
-	$m = preg_match( "/\\?>\\v\\v+\\z$/", $data, $matches);
-	if ($m) {
-		$count2 = substr_count($matches[0], "\n");
-	}
-
-	if ($count2 > 1 || $count1) {
-		echo("<$file> heading: $count1, trailing: $count2\n");
+		echo("$file\n");
+//		print_r($matches);
 	}
 }
 
