@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-do_symlink() # $source
+do_symlink() # $v
 {
 	# If symlink doesn't exist
 	if test ! -L "$1"
@@ -28,12 +28,16 @@ do_symlink() # $source
 # Read file from first arg
 if test -n "$1"; then
 	F=$1
+# Read file from default location
+elif test -e ".symlinks"; then
+	F=.symlinks
 else
-	echo "Usage: $0 [-|file]"
+	echo "Usage: $0 [file]"
 	exit -1
 fi
 
 # Read all lines
+# Whitespace determines 'do_symlink' arguments, paths cannot contain any spaces!
 while read line; do
 	# ignore blanks and comments
 	if test -n "$line" -a "${line:0:1}" != "#"; then
