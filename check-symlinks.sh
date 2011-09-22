@@ -31,6 +31,7 @@ find $EXTERNAL -type f ! -ipath '*.git*' | \
 	while read f; do \
 		O=$(expr $L - ${#f});\
 		F=${f:$O};F=${F#/};\
+		#echo F=$F, f=$f
 		[ ! -e "$F" ] && echo "! Missing link to path: $f" && continue; \
 	done
 
@@ -49,3 +50,4 @@ while read line; do
 	fi
 done < $EXTERNAL/.symlinks
 
+echo OK.
